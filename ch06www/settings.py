@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'ch06www.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ch06www',
+        'USER': 'root',
+        'PASSWORD':'2587758',
+        'HOST':'localhost',
+        'PORT':'',
     }
 }
 
@@ -102,3 +106,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]

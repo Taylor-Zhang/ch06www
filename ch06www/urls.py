@@ -14,7 +14,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from mysite import views
 
 urlpatterns = [
+    url(r'^$', views.index),
+    url(r'^(\d{1})/$', views.index, name='tv-url'),
+    url(r'^engtv/$', views.engtv),
+    url(r'^engtv/(\d{1})/$', views.engtv, name='engtv-url'),
+    url(r'^carlist/$', views.carlist),
+    url(r'^carlist/(\d{1})/$', views.carlist, name='carlist-url'),
+    url(r'^carprice/$', views.carprice),
+    url(r'^carprice/(\d{1})/$', views.carprice, name='carprice-url'),
     url(r'^admin/', include(admin.site.urls)),
 ]
